@@ -1,0 +1,69 @@
+{
+    "version": "2.0.0",
+    "tasks": [
+        {
+            "type": "shell",
+            "label": "BUILD AND RUN WITH ACCENT TRANSLATION",
+            "command": "D:\\SOFTWARE\\WIN64DK\\bin\\g++.exe -fdiagnostics-color=always -g -I${workspaceFolder}/external -I${workspaceFolder}/include ${workspaceFolder}/src/main.cpp ${workspaceFolder}/src/impl/*.cpp -o ${workspaceFolder}\\src\\main.exe && ${workspaceFolder}\\src\\main.exe",
+            "options": {
+                "cwd": "${workspaceFolder}",
+                "shell": {
+                    "executable": "cmd.exe",
+                    "args": [
+                        "/d",
+                        "/c"
+                    ]
+                }
+            },
+            "problemMatcher": [
+                "$gcc"
+            ],
+            "group": {
+                "kind": "build",
+                "isDefault": false
+            }
+        },
+        {
+            "type": "shell",
+            "label": "BUILD WITH ACCENT TRANSLATION",
+            "command": "D:\\SOFTWARE\\WIN64DK\\bin\\g++.exe -fdiagnostics-color=always -g -I${workspaceFolder}/external -I${workspaceFolder}/include ${workspaceFolder}/src/main.cpp ${workspaceFolder}/src/impl/*.cpp -o ${workspaceFolder}\\src\\main.exe",
+            "options": {
+                "cwd": "${workspaceFolder}",
+                "shell": {
+                    "executable": "cmd.exe",
+                    "args": [
+                        "/d",
+                        "/c"
+                    ]
+                }
+            },
+            "problemMatcher": [
+                "$gcc"
+            ],
+            "group": {
+                "kind": "build",
+                "isDefault": true
+            }
+        },
+        {
+            "type": "shell",
+            "label": "RUN WITH ACCENT TRANSLATION",
+            "command": "${workspaceFolder}\\src\\main.exe",
+            "options": {
+                "cwd": "${workspaceFolder}",
+                "shell": {
+                    "executable": "cmd.exe",
+                    "args": [
+                        "/d",
+                        "/c"
+                    ]
+                }
+            },
+            "problemMatcher": [],
+            "group": {
+                "kind": "test",
+                "isDefault": true
+            }
+        },
+    ]
+}
