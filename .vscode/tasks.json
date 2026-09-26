@@ -4,7 +4,7 @@
         {
             "type": "shell",
             "label": "BUILD AND RUN WITH ACCENT TRANSLATION",
-            "command": "D:\\SOFTWARE\\WIN64DK\\bin\\g++.exe -fdiagnostics-color=always -g -I${workspaceFolder}/external -I${workspaceFolder}/include ${workspaceFolder}/src/main.cpp ${workspaceFolder}/src/impl/*.cpp -o ${workspaceFolder}\\src\\main.exe && ${workspaceFolder}\\src\\main.exe",
+            "command": "D:\\SOFTWARE\\WIN64DK\\bin\\g++.exe -fdiagnostics-color=always -g -I${workspaceFolder}/external -I${workspaceFolder}/include ${workspaceFolder}/src/main.cpp ${workspaceFolder}/src/impl/*.cpp -ladvapi32 -luser32 -o ${workspaceFolder}\\src\\main.exe && ${workspaceFolder}\\src\\main.exe",
             "options": {
                 "cwd": "${workspaceFolder}",
                 "shell": {
@@ -26,7 +26,7 @@
         {
             "type": "shell",
             "label": "BUILD WITH ACCENT TRANSLATION",
-            "command": "D:\\SOFTWARE\\WIN64DK\\bin\\g++.exe -fdiagnostics-color=always -g -I${workspaceFolder}/external -I${workspaceFolder}/include ${workspaceFolder}/src/main.cpp ${workspaceFolder}/src/impl/*.cpp -o ${workspaceFolder}\\src\\main.exe",
+            "command": "D:\\SOFTWARE\\WIN64DK\\bin\\g++.exe -fdiagnostics-color=always -g -I${workspaceFolder}/external -I${workspaceFolder}/include ${workspaceFolder}/src/main.cpp ${workspaceFolder}/src/impl/*.cpp -ladvapi32 -luser32 -o ${workspaceFolder}\\src\\main.exe",
             "options": {
                 "cwd": "${workspaceFolder}",
                 "shell": {

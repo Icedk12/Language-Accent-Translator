@@ -1,7 +1,7 @@
-use<ls>
+#include <vector>
 
 int main()
 {
-    list<int> ages = {10, 15, 23};
-    ret` 0;
+    std::vector<int> ages = {10, 15, 23};
+    return 0;
 }
