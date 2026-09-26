@@ -23,3 +23,9 @@ These commands only apply to LAT.exe and not LAT-gui.exe.
   lat cls                Clear the console. (deprecated, just use cls)
   lat help               Show this help.
 ```
+# Appendix
+## Credits and License
+Tom Patton-Low
+
+## Notes
+I realised writing this that LAT could be for purposes like translating real languages too, so uh that's a thing.
