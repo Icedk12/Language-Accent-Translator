@@ -3,8 +3,22 @@
     "tasks": [
         {
             "type": "shell",
+            "label": "COMPILE RESOURCES",
+            "command": "D:\\SOFTWARE\\WIN64DK\\bin\\windres.exe ${workspaceFolder}\\src\\resource.rc -O coff -o ${workspaceFolder}\\src\\resource.res",
+            "options": {
+                "cwd": "${workspaceFolder}",
+                "shell": {
+                    "executable": "cmd.exe",
+                    "args": ["/d", "/c"]
+                }
+            },
+            "problemMatcher": []
+        },
+        {
+            "type": "shell",
             "label": "BUILD AND RUN WITH ACCENT TRANSLATION",
-            "command": "D:\\SOFTWARE\\WIN64DK\\bin\\g++.exe -fdiagnostics-color=always -g -I${workspaceFolder}/external -I${workspaceFolder}/include ${workspaceFolder}/src/main.cpp ${workspaceFolder}/src/impl/*.cpp -ladvapi32 -luser32 -o ${workspaceFolder}\\src\\main.exe && ${workspaceFolder}\\src\\main.exe",
+            "dependsOn": ["COMPILE RESOURCES"],
+            "command": "D:\\SOFTWARE\\WIN64DK\\bin\\g++.exe -fdiagnostics-color=always -g -I${workspaceFolder}/external -I${workspaceFolder}/include ${workspaceFolder}/src/main.cpp ${workspaceFolder}/src/impl/*.cpp ${workspaceFolder}\\src\\resource.res -ladvapi32 -luser32 -o ${workspaceFolder}\\src\\main.exe && ${workspaceFolder}\\src\\main.exe",
             "options": {
                 "cwd": "${workspaceFolder}",
                 "shell": {
@@ -26,7 +40,8 @@
         {
             "type": "shell",
             "label": "BUILD WITH ACCENT TRANSLATION",
-            "command": "D:\\SOFTWARE\\WIN64DK\\bin\\g++.exe -fdiagnostics-color=always -g -I${workspaceFolder}/external -I${workspaceFolder}/include ${workspaceFolder}/src/main.cpp ${workspaceFolder}/src/impl/*.cpp -ladvapi32 -luser32 -o ${workspaceFolder}\\src\\main.exe",
+            "dependsOn": ["COMPILE RESOURCES"],
+            "command": "D:\\SOFTWARE\\WIN64DK\\bin\\g++.exe -fdiagnostics-color=always -g -I${workspaceFolder}/external -I${workspaceFolder}/include ${workspaceFolder}/src/main.cpp ${workspaceFolder}/src/impl/*.cpp ${workspaceFolder}\\src\\resource.res -ladvapi32 -luser32 -o ${workspaceFolder}\\src\\main.exe",
             "options": {
                 "cwd": "${workspaceFolder}",
                 "shell": {
@@ -64,6 +79,6 @@
                 "kind": "test",
                 "isDefault": true
             }
-        },
+        }
     ]
 }

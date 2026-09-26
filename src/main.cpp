@@ -1,3 +1,14 @@
+/*
+===============================================================
+=  Language Accent Translator, Copyright Tom Patton-Low 2026  =
+===============================================================
+Hey! Do not steal LAT. I spent a whole day making this.
+
+You are allowed to download, modify and use the source code of Language Accent Translator, on the conditions that you:
+    1. Do not list any modified code as your own.
+    2. Do not redistribute without crediting.
+
+*/
 #include <iostream>
 #include <string>
 #include <cstdlib>
@@ -136,7 +147,7 @@ void add_executable_directory_to_user_path()
             &environment_key,
             nullptr) != ERROR_SUCCESS)
     {
-        std::cerr << "Warning: could not open the current user's environment settings.\n";
+        push_warning("Warning: could not open the current user's environment settings.");
         return;
     }
 
@@ -147,7 +158,7 @@ void add_executable_directory_to_user_path()
     if (result != ERROR_SUCCESS && result != ERROR_FILE_NOT_FOUND)
     {
         RegCloseKey(environment_key);
-        std::cerr << "Warning: could not read the current user's PATH.\n";
+        push_warning("Warning: could not read the current user's PATH.");
         return;
     }
 
@@ -157,7 +168,7 @@ void add_executable_directory_to_user_path()
         if (value_type != REG_EXPAND_SZ && value_type != REG_SZ)
         {
             RegCloseKey(environment_key);
-            std::cerr << "Warning: the current user's PATH has an unsupported registry type.\n";
+            push_warning("Warning: the current user's PATH has an unsupported registry type.");
             return;
         }
 
@@ -172,7 +183,7 @@ void add_executable_directory_to_user_path()
         if (result != ERROR_SUCCESS)
         {
             RegCloseKey(environment_key);
-            std::cerr << "Warning: could not read the current user's PATH.\n";
+            push_warning("Warning: could not read the current user's PATH.");
             return;
         }
         user_path.assign(path_buffer.data());
@@ -229,7 +240,7 @@ void add_executable_directory_to_user_path()
     RegCloseKey(environment_key);
     if (write_result != ERROR_SUCCESS)
     {
-        std::cerr << "Warning: could not add the program directory to the current user's PATH.\n";
+        push_warning("Warning: could not add the program directory to the current user's PATH.");
         return;
     }
 
