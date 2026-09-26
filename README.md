@@ -1,6 +1,6 @@
 # Language-Accent-Translator
 ## Bugs
-It would be easy to fix, but if you type something that is not an option in LAT-gui it breaks. Lwk ima take a nap lmk.
+It would be easy to fix, but if you type something that is not an option in LAT-gui it breaks. Ngl ima take a nap lmk.
 
 ## Overview
 A tool designed to bridge the gap between different coding styles and dialects, allowing developers to seamlessly translate their preferred shorthand or personal code style ("accent") into standard target syntax. It can either be used as an interface or pure commands. LAT can be used to draft different syntax styles in the development of programming languages too, giving the user the ability to try out their syntax on an already existing language.
